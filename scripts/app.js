@@ -23,5 +23,9 @@ class UI {
 // DOM events
 
 document.getElementById('bible-form').addEventListener('submit', function () {
-    alert('Sending form')
+    const name = document.getElementById('name').value;
+    const quote = document.getElementById('quote').value;
+    const verse = document.getElementById('verse').value;
+
+    console.log(name, quote, verse)
 })
