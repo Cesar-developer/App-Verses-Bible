@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Time</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <header class="header mb-10">
+        <h1>Bible Verses</h1>
+    </header>
+
+    <section class="section row mb-10">
+        <div class="col-1">
+            <div class="card mt-20">
+                <div class="card-header">
+                    <h4>Add A Bible Verse</h4>
+                </div>
+
+                <form method="GET" id="bible-form" class="card-body">
+                    <input type="text" id="name" name="name" placeholder="User Name" class="form-control"
+                        autocomplete="off">
+
+                    <input type="text" id="quote" name="quote" placeholder="Biblical quote" class="form-control">
+
+                    <textarea id="verse" name="verse" class="form-control form-control-area" style="resize: none;"
+                        minlength="5" spellcheck="true" aria-checked="true" placeholder="Verse"></textarea>
+
+                    <input type="button" value="Save" id="btn-save" class="btn">
+
+                </form>
+            </div>
+        </div>
+
+        <div id="verses-list"class="col-2">
+            
+        </div>
+    </section>
+
+    <script src="/scripts/app.js"></script>
+</body>
+
+</html>
