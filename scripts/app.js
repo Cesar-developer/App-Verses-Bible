@@ -7,11 +7,30 @@ class BibleVerse {
 }
 
 class UI {
-    addBibleVerse() {
+    addBibleVerse(bibleVerse) {
+        const verseList = document.getElementById('verses-list');
+        const element = document.createElement('div');
 
+        element.innerHTML =
+            `<div class="card">
+                <div class="card-row">
+                    <strong>User Name</strong>: ${bibleVerse.userName} 
+                    <strong>Biblical Quote</strong>: ${bibleVerse.quote} 
+                    <strong>Biblical Verse</strong>: ${bibleVerse.verse}
+                    <button class="btn btn-delete" name="delete">Delete</button>
+                </div>
+             </div>
+            `;
+        
+        verseList.appendChild(element);
+        this.resetForm();
     }
 
-    deleteBibleVerse() {
+    resetForm() {
+        document.getElementById('bible-form').reset();
+    }
+
+    deleteBibleVerse(bibleVerse) {
 
     }
 
@@ -22,10 +41,20 @@ class UI {
 
 // DOM events
 
-document.getElementById('bible-form').addEventListener('submit', function () {
+document.getElementById('bible-form').addEventListener('submit', function (e) {
     const name = document.getElementById('name').value;
     const quote = document.getElementById('quote').value;
     const verse = document.getElementById('verse').value;
 
-    console.log(name, quote, verse)
-})
+    const verses = new BibleVerse(name, quote, verse);
+
+    const ui = new UI();
+
+    ui.addBibleVerse(verses);
+
+    e.preventDefault();
+});
+
+document.getElementById('veres-list').addEventListener('click', function (e) {
+    
+});
