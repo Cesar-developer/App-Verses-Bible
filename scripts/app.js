@@ -30,8 +30,12 @@ class UI {
         document.getElementById('bible-form').reset();
     }
 
-    deleteBibleVerse(bibleVerse) {
-
+    deleteBibleVerse(element) {
+        if (element.name === "delete") {
+            element.parentElement.parentElement.parentElement.remove();
+        } else {
+            return null;
+        }
     }
 
     showMessage() {
@@ -55,6 +59,7 @@ document.getElementById('bible-form').addEventListener('submit', function (e) {
     e.preventDefault();
 });
 
-document.getElementById('veres-list').addEventListener('click', function (e) {
-    
+document.getElementById('verses-list').addEventListener('click', function(e) {
+    const ui = new UI();
+    ui.deleteBibleVerse(e.target);
 });
